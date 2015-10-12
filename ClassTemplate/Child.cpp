@@ -5,15 +5,11 @@
 
 using namespace std;
 
-Child::Child(int number, std::string& word) : Super(number, word) {
+Child::Child(int number, std::string& word) : Super(number), word(word) {
     cout << "and here's more from child :)" << endl;
 }
 
-Child::Child(int number, std::string& word, std::string& otherWord) : Super(number, word), otherWord(otherWord) {    
-    cout << "and here's more from child :)" << endl;
-}
-
-void greeting() {
-    cout << "Hello from Child!" << endl;
+std::string& Child::getWord() {
+    return word;
 }
 

@@ -1,27 +1,23 @@
 #include <iostream>
-#include <string>
 #include "Super.h"
 
 using namespace std;
 
-Super::Super() : number(0), word("") {
+Super::Super() : number(0) {
     cout << "created class..." << endl;
 
     cout << number << endl;
-    cout << word << endl;
+}
+
+Super::Super(int number) {
+    cout << "created class... with number: " << number << endl;
+
+    number = number;
+
+    cout << number << endl;
 }
 
 void Super::greeting() {
     cout <<  "Hello from Super!" << endl;
-}
-
-Super::Super(int number, std::string& word) {
-    cout << "created class..." << endl;
-
-    number = number;
-    word   = word;
-
-    cout << number << endl;
-    cout << word << endl;
 }
 

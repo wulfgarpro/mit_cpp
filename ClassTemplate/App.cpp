@@ -1,15 +1,21 @@
 #include <iostream>
-#include <string>
 #include "Super.h"
 #include "Child.h"
 
+using namespace std;
+
+// polymorphic
+std::string getWord(Super& s) {
+    return s.getWord();
+}
+
 int main(void) {
-    std::string word = "Hi!";
+    std::string wordA = "Hi!";
 
-    Super s;
-    s.greeting();
+    Child c(20, wordA);    
+    c.greeting(); // base class
 
-    Child c(20, word);    
-    c.greeting();
+    std::string word = getWord(c);
+    cout << word << endl;
 }
 
