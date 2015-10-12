@@ -3,7 +3,8 @@
 class Super {    
     public:
         Super();
-        Super(int, std::string);
+        Super(int, std::string&);
+        void greeting();
     protected:
     private:
         int       number;

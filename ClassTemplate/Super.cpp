@@ -11,8 +11,13 @@ Super::Super() : number(0), word("") {
     cout << word << endl;
 }
 
-Super::Super(int number, std::string word) {
+void Super::greeting() {
+    cout <<  "Hello from Super!" << endl;
+}
+
+Super::Super(int number, std::string& word) {
     cout << "created class..." << endl;
+
     number = number;
     word   = word;
 
