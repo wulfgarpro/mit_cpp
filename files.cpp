@@ -28,5 +28,7 @@ int main(void) {
     getline(i, test);
     i.close();
     cout << "FILE NOW READS: " + test << endl;
+
+    return 0;
 }
 
