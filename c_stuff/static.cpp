@@ -2,7 +2,8 @@
 #include <assert.h>
 
 /*
- * A translation unit is for all intents and purposes a file (.c/.cpp), after it's finished including all of the header files.
+ * A translation unit is for all intents and purposes a file (.c/.cpp), after it's finished 
+ * including all of the header files.
  */
 
 /*
@@ -47,4 +48,3 @@ int main(void) {
 
     return 0;
 }
-
