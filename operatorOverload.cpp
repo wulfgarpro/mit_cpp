@@ -14,6 +14,7 @@ class Custom {
         // the right of the overloaded operator
         // i.e. a + b; # a being _this_
         // that is, there is only 1 argument
+        // (see `friend`)
 
         // ONLY 1 can be commented in
         /*Custom operator+(Custom c) {
