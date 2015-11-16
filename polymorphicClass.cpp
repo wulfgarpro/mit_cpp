@@ -17,7 +17,15 @@ public:
     int sum() {
         return this->a+this->b;
     }
+    // this makes deductFromSum pure virtual, i.e. only derived classes implement and vtable is used for lookup
     virtual int deductFromSum(int v)=0;
+
+    // This would enable us to have a generic implementation, i.e. not pure virtual
+    /*
+        virtuaL int deductFromSum(int v) {
+            // implementation
+        }
+    */
 };
 
 class B : public A {
