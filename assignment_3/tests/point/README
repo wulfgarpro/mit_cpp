@@ -1,0 +1,1 @@
+g++ ../../point/point.cpp point_test.cpp -o point_test -I ../../point -lgtest -lgtest_main

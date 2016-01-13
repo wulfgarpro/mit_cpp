@@ -1,0 +1,2 @@
+g++ -I ../point point_array.cpp -o point_array
+g++ -I ../point point_array.cpp -o point_array
