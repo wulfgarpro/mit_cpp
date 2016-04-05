@@ -17,7 +17,6 @@ PointArray::PointArray(const Point n_points[], const int size) {
         this->points[i] = *(new Point(x, y));
     }
     this->size = size;
-    //this->start = this->points;
 };
 
 // copy constructor
@@ -28,7 +27,6 @@ PointArray::PointArray(const PointArray& other) {
         this->points[i] = *(new Point(x, y));
     }
     this->size = other.get_size();
-    //this->start = pa->start;
 };
 
 PointArray::~PointArray() {
@@ -41,19 +39,18 @@ PointArray::~PointArray() {
 };
 
 void PointArray::resize(int n_size) {
+    if(n_size < 0) throw std::underflow_error("Can't resize below zero");
+    
     Point* tmp_array = new Point[n_size];
-
-    for(int i = 0; i < n_size; i++) {
-        if(!(&this->points[i] == nullptr)) {
+    if(this->size == 0) {
+        tmp_array[0] = this->points[0];
+    } else {
+        for(int i = 0; i < n_size; i++) {
             tmp_array[i] = this->points[i];
         }
     }
-    
-    for(int i = 0; i < this->size; i++) {
-        delete (&this->points[i]); // delete each point obj
-    }
-     
-    delete [] this->points; // delete array
+
+    delete [] this->points; // delete array*/
 
     this->points = tmp_array;
     this->size = n_size;
@@ -65,19 +62,20 @@ void PointArray::push_back(const Point& p) {
 };
 
 void PointArray::insert(const int position, const Point& p) {
-    if(position < this->size) throw 
-        std::underflow_error("Can't insert below size");
-    if(position > this->size) throw 
-        std::overflow_error("Can't insert above size");
-
-    resize(this->size + 1); // extra element position
-    for(int i = this->size; i > 0; i--) {
-        if(!i == position) {
-            std::cout << "wrong position" << std::endl;
-            this->points[i+1] = this->points[i];
-        } else {
-            std::cout << "got else" << std::endl;
-            this->points[i] = p;
+    std::cout << "before insert: " << p.getX() << ", " << p.getY() << std::endl;
+    if(this->size == 0) {
+        resize(this->size + 1); // extra element position
+        this->points[0] = p;
+        std::cout << "x: " << this->points[0].getX() << ", " << this->points[0].getY() << std::endl;
+    } else {
+        resize(this->size + 1); // extra element position
+        for(int i = (this->size-1); i > 0; i--) { // zero based
+            if(!(i == position)) {
+                this->points[i+1] = this->points[i];
+            } else {
+                this->points[i] = p;
+        std::cout << "x: " << this->points[i].getX() << ", " << this->points[i].getY() << std::endl;
+            }
         }
     }
 };
@@ -102,35 +100,19 @@ void PointArray::clear() {
 };
 
 Point* PointArray::get(const int position) {
-    std::cout << "Got position: " + position;
-
     if(this->size == 0) return nullptr;
     if(position > this->size) return nullptr;
     Point found = this->points[position];
-    std::cout << found.getX();
-    return &(this->points[position]);
-};
-
-const Point* PointArray::get(const int position) const {
-    if(this->size == 0) return nullptr;
-    if(position > this->size) return nullptr;    
-    Point* p = &points[position];
+    std::cout << "x is: " << found.getX() << std::endl; 
     return (&this->points[position]);
 };
 
-/*int main(void) {
-    PointArray* pa = new PointArray();        
-    std::cout << pa->get_size() << std::endl;
+const Point* PointArray::get(const int position) const {
+    std::cout << "searching for position: " << position << std::endl;
+    if(this->size == 0) return nullptr;
+    if(position > this->size) return nullptr;    
+    Point* p = &points[position];
+    std::cout << "x is: " << p->getX() << std::endl; 
+    return (&this->points[position]);
+};
 
-    const Point p(5,5);
-    pa->insert(0, p);
-
-    std::cout << pa->get_size() << std::endl;
-    Point* found = pa->get(0);
-    
-    std::cout << found->getX() << std::endl;
-
-    //delete pa;
-    
-    return 0;
-};*/

@@ -1,3 +1,6 @@
+#ifndef POINT_ARRAY_H
+#define POINT_ARRAY_H
+
 #include "point.h"
 
 class PointArray {
@@ -6,6 +9,7 @@ class PointArray {
         //Point* start;
         int size;
         void resize(int n_size);
+
     public:
         PointArray();
         PointArray(const Point points[], const int size);
@@ -19,3 +23,6 @@ class PointArray {
         Point* get(const int position);
         const Point* get(const int position) const;
 };
+
+#endif
+

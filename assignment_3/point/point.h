@@ -1,3 +1,6 @@
+#ifndef POINT_H
+#define POINT_H
+
 class Point {
     private:
         int x, y;
@@ -11,3 +14,6 @@ class Point {
         void setX(const int);
         void setY(const int);
 };
+
+#endif
+
