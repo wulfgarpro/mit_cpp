@@ -21,12 +21,12 @@ PointArray::PointArray(const Point n_points[], const int size) {
 
 // copy constructor
 PointArray::PointArray(const PointArray& other) {
-    for(int i = 0; i < other.get_size(); i++) {
+    for(int i = 0; i < other.getSize(); i++) {
         int x = other.points[i].getX();
         int y = other.points[i].getY();
         this->points[i] = *(new Point(x, y));
     }
-    this->size = other.get_size();
+    this->size = other.getSize();
 };
 
 PointArray::~PointArray() {
@@ -56,7 +56,7 @@ void PointArray::resize(int n_size) {
     this->size = n_size;
 };
 
-void PointArray::push_back(const Point& p) {
+void PointArray::pushBack(const Point& p) {
     this->resize(this->size++);
     this->points[this->size] = p;
 };
@@ -91,7 +91,7 @@ void PointArray::remove(const int position) {
     resize(this->size - 1); // reduce by 1
 };
 
-int PointArray::get_size() const {
+int PointArray::getSize() const {
     return this->size;
 };
 

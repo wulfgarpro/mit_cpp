@@ -1,0 +1,1 @@
+g++ rectangle.cpp -I ./../point/ -I ./../point_array ./../point/point.cpp ./../point_array/point_array.cpp polygon.cpp -o rectangle -std=c++11
