@@ -16,9 +16,9 @@ namespace MyPerson {
     };
 }
 
-using namespace MyPerson;
+//using namespace MyPerson;
 int main(void) {
-    Person me;
+    MyPerson::Person me;
     me.setName("James");
     cout << me.name() << endl;
     return 0;
