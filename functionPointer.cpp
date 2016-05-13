@@ -1,16 +1,16 @@
 #include <iostream>
 #include <string.h>
 
-void Hello(std::string name) {
+void hello(std::string name) {
     std::cout << "Hello " << name << std::endl;
 }
 
-void SayHello(std::string name, void (*helloPtr)(std::string)) {
+void sayHello(std::string name, void (*helloPtr)(std::string)) {
     helloPtr(name);
 }
 
 int main(void) {
-    SayHello("James", &Hello);
+    sayHello("James", &hello);
 
     return 0;
 }
