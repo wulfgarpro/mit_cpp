@@ -49,10 +49,11 @@ int main(void) {
     Person *p = static_cast<Person*>(&l);
     std::cout << p->age << std::endl;
 
-    // "dynamic-cast" is useful when you don't know the object type; a dynamic cast and a null pointer is returned if cast fails; in order for the down-cast to work, the argument must be polymorphic (see above), otherwise a compile-time error occurs
+    // "dynamic-cast" is useful when you don't know the object type; a dynamic cast will return a null pointer if cast fails; in order for the down-cast to work, the argument must be polymorphic (see above), otherwise a compile-time error occurs; the static cast will also throw a compile error in such a case
     Boy *b = dynamic_cast<Boy*>(&me);   // up-cast
     std::cout << b->name << std::endl;
 
+    // a static cast here wouldn't return a null (undefined behavior)
     Me *m = dynamic_cast<Me*>(b);       // down-cast
     if(m != nullptr) {
         std::cout << m->getAge() << std::endl;
