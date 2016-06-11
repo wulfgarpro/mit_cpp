@@ -14,10 +14,6 @@ double Rectangle::area() {
     return 5.5; // TODO 
 };
 
-int Rectangle::getNumSides() {
-    return 4;   // TODO
-};
-
 /* 
 int main(void) {
     std::cout << "Polygon go..." << std::endl;
