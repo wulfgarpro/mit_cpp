@@ -14,7 +14,7 @@ class Polygon {
         Polygon(const PointArray& pa);
         ~Polygon();
         virtual double area() = 0;
-        virtual int getNumSides() = 0;
+        int getNumSides();
         const PointArray* getPoints() { return &points; };
         static int getNumPolygons();
 };
