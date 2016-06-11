@@ -6,7 +6,7 @@
 
 class Polygon {
     protected:
-        const PointArray* points;
+        const PointArray points;
         static int number;
 
     public:
@@ -15,7 +15,7 @@ class Polygon {
         ~Polygon();
         virtual double area() = 0;
         virtual int getNumSides() = 0;
-        virtual const PointArray* getPoints() = 0;
+        const PointArray* getPoints() { return &points; };
         static int getNumPolygons();
 };
 

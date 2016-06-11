@@ -1,2 +1,1 @@
-g++ -I ../point point_array.cpp -o point_array
-g++ -I ../point point_array.cpp -o point_array
+g++ -c point_array.cpp -I ../point ../point/point.cpp --std=c++11

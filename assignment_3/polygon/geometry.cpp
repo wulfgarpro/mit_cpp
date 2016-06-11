@@ -9,3 +9,4 @@ static Point *updateConstructorPoints(const Point &p1, const Point &p2, const Po
     constructorPoints[3] = p4;
     return constructorPoints;
 };
+

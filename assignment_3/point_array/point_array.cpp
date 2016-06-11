@@ -14,7 +14,7 @@ PointArray::PointArray(const Point n_points[], const int size) {
     for(int i = 0; i < size; i++) {
         int x = n_points[i].getX();
         int y = n_points[i].getY();
-        this->points[i] = *(new Point(x, y));
+        this->points[i] = Point(x, y);
     }
     this->size = size;
 };
@@ -24,17 +24,12 @@ PointArray::PointArray(const PointArray& other) {
     for(int i = 0; i < other.getSize(); i++) {
         int x = other.points[i].getX();
         int y = other.points[i].getY();
-        this->points[i] = *(new Point(x, y));
+        this->points[i] = Point(x, y);
     }
     this->size = other.getSize();
 };
 
 PointArray::~PointArray() {
-    if(points != nullptr) {
-        for(int i = 0; i < this->size; i++) {
-            delete (&this->points[i]); // delete each point obj
-        }
-    }
     delete [] this->points; // delete array
 };
 
@@ -50,10 +45,12 @@ void PointArray::resize(int n_size) {
         }
     }
 
-    delete [] this->points; // delete array*/
+    delete [] this->points; // delete array
 
     this->points = tmp_array;
     this->size = n_size;
+
+    delete tmp_array;
 };
 
 void PointArray::pushBack(const Point& p) {
