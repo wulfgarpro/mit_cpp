@@ -34,7 +34,7 @@ void Polygon::printAttributes(const Polygon* polygon) {
     std::cout << "Polygon points: " << std::endl;
 
     int count = polygon->points.getSize();
-    while(count > 0) {
+    while (count > 0) {
         const Point* tmp = polygon->points.get(count);
         std::cout << tmp->getX() << ", " << tmp->getY() << std::endl;
         count--;

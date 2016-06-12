@@ -7,7 +7,7 @@
 Rectangle::Rectangle(const Point lowerLeft, const Point upperRight) : Polygon::Polygon(updateConstructorPoints(lowerLeft, upperRight), 2) {
 };
 
-Rectangle::Rectangle(const Point lowerLeftX, const Point lowerLeftY, const Point upperRightX, const Point upperRightY) : Polygon::Polygon(updateConstructorPoints(lowerLeftX, lowerLeftY, upperRightX, upperRightY), 2) {
+Rectangle::Rectangle(const Point lowerLeft, const Point upperLeft, const Point upperRight, const Point lowerRight) : Polygon::Polygon(updateConstructorPoints(lowerLeft, upperLeft, upperRight, lowerRight), 4) {
 };
 
 double Rectangle::area() const {
