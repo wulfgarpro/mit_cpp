@@ -45,11 +45,10 @@ void PointArray::resize(int n_size) {
         }
     }
 
-    delete [] this->points; // delete array
-
     this->points = tmp_array;
     this->size = n_size;
 
+    delete [] this->points;
     delete tmp_array;
 };
 
@@ -100,7 +99,6 @@ Point* PointArray::get(const int position) {
     if(this->size == 0) return nullptr;
     if(position > this->size) return nullptr;
     Point found = this->points[position];
-    std::cout << "x is: " << found.getX() << std::endl; 
     return (&this->points[position]);
 };
 
@@ -109,7 +107,6 @@ const Point* PointArray::get(const int position) const {
     if(this->size == 0) return nullptr;
     if(position > this->size) return nullptr;    
     Point* p = &points[position];
-    std::cout << "x is: " << p->getX() << std::endl; 
     return (&this->points[position]);
 };
 
