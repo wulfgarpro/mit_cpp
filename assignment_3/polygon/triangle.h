@@ -3,10 +3,10 @@
 
 #include "polygon.h"
 
-class Triangle : Polygon {
+class Triangle : public Polygon {
     public:
         Triangle(const Point lowerLeft, const Point lowerRight, const Point upper);
-        const double area();
+        double area() const;
 };
 
 #endif

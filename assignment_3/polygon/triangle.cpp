@@ -7,7 +7,7 @@
 Triangle::Triangle(const Point lowerLeft, const Point lowerRight, const Point upper) : Polygon::Polygon(updateConstructorPoints(lowerLeft, lowerRight, upper), 3) {
 };
 
-const double Triangle::area() {
+double Triangle::area() const {
     return 3.2; // TODO 
 };
 

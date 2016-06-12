@@ -1,5 +1,7 @@
+#include "point.h"
 #include "polygon.h"
 #include "triangle.h"
+#include "rectangle.h"
 #include <iostream>
 
 int Polygon::number = 0;
@@ -19,28 +21,38 @@ Polygon::~Polygon() {
     Polygon::number--;
 };
 
-int Polygon::getNumPolygons() const {
+int Polygon::getNumPolygons() {
     return Polygon::number;
 };
-
-double Polygon::area() const {
-    return 0.0;
-}
 
 int Polygon::getNumSides() const {
     return 0; // TODO
 }
 
-void Polygon::printAttributes(const Polygon* polygon) const {
+void Polygon::printAttributes(const Polygon* polygon) {
     std::cout << "Polygon area:   " << polygon->area() << std::endl;
     std::cout << "Polygon points: " << std::endl;
-    for(int i = polygon->number; i <= 0; i++) {
-        std::cout << polygon->points.get(i) << std::endl;
-    } 
+
+    int count = polygon->points.getSize();
+    while(count > 0) {
+        const Point* tmp = polygon->points.get(count);
+        std::cout << tmp->getX() << ", " << tmp->getY() << std::endl;
+        count--;
+    }
+    std::cout << "done... :)" << std::endl;
 };
 
 int main(void) {
-    std::cout << "Hello World" << std::endl;
+    Point a(0,0);
+    Point b(5,5);
+    Point c(0,10);
+
+    const Rectangle* r = new Rectangle(a, b); 
+    Polygon::printAttributes(r);
+
+    const Triangle* t = new Triangle(a, b, c); 
+    Polygon::printAttributes(t);
+
     return 0;
 }
 

@@ -3,11 +3,11 @@
 
 #include "polygon.h"
 
-class Rectangle : Polygon {
+class Rectangle : public Polygon {
     public:
         Rectangle(const Point lowerLeft, const Point upperRight);
-        Rectangle(int lowerLeftX, int lowerLeftY, int upperRightX, int upperRightY);
-        const double area();
+        Rectangle(const Point lowerLeft, const Point upperLeft, const Point upperRight, const Point lowerRight);
+        double area() const;
 };
 
 #endif

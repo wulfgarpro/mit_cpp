@@ -16,8 +16,8 @@ class Polygon {
         virtual double area() const = 0;
         int getNumSides() const;
         const PointArray* getPoints() const { return &points; };
-        int getNumPolygons() const;
-        void printAttributes(const Polygon* polygon) const;
+        static int getNumPolygons();
+        static void printAttributes(const Polygon* polygon);
 };
 
 #endif
