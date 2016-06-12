@@ -6,8 +6,7 @@
 class Triangle : Polygon {
     public:
         Triangle(const Point lowerLeft, const Point lowerRight, const Point upper);
-        double area();
-        int getNumSides();
+        const double area();
 };
 
 #endif

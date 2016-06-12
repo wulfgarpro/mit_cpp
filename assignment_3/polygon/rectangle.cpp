@@ -10,7 +10,7 @@ Rectangle::Rectangle(const Point lowerLeft, const Point upperRight) : Polygon::P
 Rectangle::Rectangle(int lowerLeftX, int lowerLeftY, int upperRightX, int upperRightY) : Polygon::Polygon(updateConstructorPoints(lowerLeftX, lowerLeftY, upperRightX, upperRightY), 2) {
 };
 
-double Rectangle::area() {
+const double Rectangle::area() {
     return 5.5; // TODO 
 };
 

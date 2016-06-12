@@ -13,10 +13,11 @@ class Polygon {
         Polygon(const Point pts[], const int length);
         Polygon(const PointArray& pa);
         ~Polygon();
-        virtual double area() = 0;
-        int getNumSides();
-        const PointArray* getPoints() { return &points; };
-        static int getNumPolygons();
+        virtual double area() const = 0;
+        int getNumSides() const;
+        const PointArray* getPoints() const { return &points; };
+        int getNumPolygons() const;
+        void printAttributes(const Polygon* polygon) const;
 };
 
 #endif

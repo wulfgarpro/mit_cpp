@@ -7,8 +7,7 @@ class Rectangle : Polygon {
     public:
         Rectangle(const Point lowerLeft, const Point upperRight);
         Rectangle(int lowerLeftX, int lowerLeftY, int upperRightX, int upperRightY);
-        double area();
-        int getNumSides();
+        const double area();
 };
 
 #endif
