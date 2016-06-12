@@ -11,7 +11,7 @@ PointArray::PointArray() {
 // copy elements from points arg into internal array
 PointArray::PointArray(const Point n_points[], const int size) {
     this->points = new Point[size];
-    for(int i = 0; i < size; i++) {
+    for(int i = 0; i <= size; i++) {
         int x = n_points[i].getX();
         int y = n_points[i].getY();
         this->points[i] = Point(x, y);
