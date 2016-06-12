@@ -1,5 +1,8 @@
 #include "point.h"
 
+Point::Point(int x=0, int y=0) : x(x), y(y) {
+};
+
 Point::Point(const Point& p) {
     this->x = p.getX();
     this->y = p.getY();
