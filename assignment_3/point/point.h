@@ -6,6 +6,7 @@ class Point {
         int x, y;
 
     public:
+        Point();
         Point(int x, int y);
         Point(const Point& p); // copy constructor
         Point& operator= (const Point& p);
