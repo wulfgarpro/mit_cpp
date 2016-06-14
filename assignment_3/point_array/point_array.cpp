@@ -11,11 +11,11 @@ PointArray::PointArray() {
 // copy elements from points arg into internal array
 PointArray::PointArray(const Point n_points[], const int size) {
     this->points = new Point[size];
-    for(int i = 0; i <= size; i++) {
+    for(int i = 0; i <= size-1; i++) {
         int x = n_points[i].getX();
         int y = n_points[i].getY();
         this->points[i] = Point(x, y);
-    }
+    } 
     this->size = size;
 };
 
@@ -88,6 +88,7 @@ void PointArray::remove(const int position) {
 };
 
 int PointArray::getSize() const {
+    std::cout << "Size is: " << this->size << std::endl;
     return this->size;
 };
 
