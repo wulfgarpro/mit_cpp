@@ -3,6 +3,7 @@
 #include "triangle.h"
 #include "rectangle.h"
 #include <iostream>
+#include <assert.h>
 
 int Polygon::number = 0;
 Polygon::Polygon(const Point pts[], const int size) :
@@ -34,24 +35,32 @@ void Polygon::printAttributes(const Polygon* polygon) {
     std::cout << "Polygon points: " << std::endl;
 
     int count = polygon->points.getSize();
-    while (count > 0) {
-        const Point* tmp = polygon->points.get(count);
+    for(int i = 0; i <= count-1; i++) {
+        const Point* tmp = polygon->points.get(i);
         std::cout << tmp->getX() << ", " << tmp->getY() << std::endl;
-        count--;
     }
+
     std::cout << "done... :)" << std::endl;
 };
 
 int main(void) {
     Point a(0,0);
     Point b(5,5);
-    Point c(0,10);
+    Point c(0,0);
+    Point d(5,5);
 
-    const Rectangle* r = new Rectangle(a, b); 
+    const Rectangle* r = new Rectangle(a, b, c, d); 
+    //const Rectangle* r2 = new Rectangle(a, b); 
     Polygon::printAttributes(r);
 
     const Triangle* t = new Triangle(a, b, c); 
     Polygon::printAttributes(t);
+
+    //std::cout << "area: " << r->area() << std::endl;
+    //std::cout << "sides count: " << r->getNumSides() << std::endl;
+
+    //std::cout << "area: " << r2->area() << std::endl;
+    //std::cout << "sides count: " << r2->getNumSides() << std::endl;
 
     return 0;
 }
