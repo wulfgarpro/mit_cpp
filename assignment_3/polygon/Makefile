@@ -6,5 +6,5 @@ polygon: polygon.cpp
 	$(CXX) polygon.cpp ../point/point.cpp ./../point_array/point_array.cpp rectangle.cpp triangle.cpp -o polygon  $(CXXFLAGS)
 
 clean:
-	rm -f $(binaries) *.o
+	rm -f polygon *.o
 
