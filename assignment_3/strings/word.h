@@ -2,6 +2,10 @@
 #define WORD_H
 
 #include <string>
+#include <vector>
+
+static const char theVowels[] = {'a','e','i','o','u'};
+static const std::vector<char> vowels (theVowels, theVowels + sizeof(theVowels) / sizeof(theVowels[0]));
 
 class Word {
     public:
@@ -11,11 +15,9 @@ class Word {
     protected:
     private:
         std::string word;
-        enum class VOWELS {
-            a,A, e,E, i,I, o,O, u,U
-        } vowels;
-        std::string pigLatinifyConsonant(std::string word);
-        std::string pigLatinifyVowel(std::string word);
+        std::string pigLatinifyConsonant();
+        std::string pigLatinifyVowel();
+        bool isConsonant();
 };
 
 #endif // WORD_H
