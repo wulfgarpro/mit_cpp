@@ -17,7 +17,7 @@ if (test)
 
     #set (GTEST_LIB ${PROJECT_SOURCE_DIR}/local/lib/libgtest.so)
     #set (GTEST_LIB_MAIN ${PROJECT_SOURCE_DIR}/local/lib/libgtest_main.so)
-    add_executable (test_Strings ${PROJECT_SOURCE_DIR}/test/test_string.cpp ${PROJECT_SOURCE_DIR}/test/test_word.cpp)
+    add_executable (test_Strings ${PROJECT_SOURCE_DIR}/test/test_string.cpp ${PROJECT_SOURCE_DIR}/test/test_word.cpp ${PROJECT_SOURCE_DIR}/word.cpp)
     #target_link_libraries (test_tutorial ${GTEST_LIB} ${GTEST_LIB_MAIN})
     target_link_libraries (test_Strings gtest gtest_main)
 

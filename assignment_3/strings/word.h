@@ -7,6 +7,7 @@ class Word {
     public:
         Word(std::string word);
         std::string pigLatinify(void);
+        std::string getWord() { return word; }
     protected:
     private:
         std::string word;
