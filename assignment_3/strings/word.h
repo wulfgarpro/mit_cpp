@@ -14,6 +14,8 @@ class Word {
         enum class VOWELS {
             a,A, e,E, i,I, o,O, u,U
         } vowels;
+        std::string pigLatinifyConsonant(std::string word);
+        std::string pigLatinifyVowel(std::string word);
 };
 
 #endif // WORD_H
