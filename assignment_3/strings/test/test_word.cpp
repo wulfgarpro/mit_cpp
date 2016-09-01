@@ -39,12 +39,12 @@ TEST_F(WordTest, WordWithConsonantIsPiggedProperly) {
 TEST_F(WordTest, WordWithVowelIsPiggedProperly) {
     delete word1, delete word2, delete word3, delete word4;
     word1 = new Word("opal");
-    word2 = new Word("richy");
+    word2 = new Word("ichy");
     word3 = new Word("asshole");
-    word4 = new Word("snakey");
+    word4 = new Word("achey");
 
-    ASSERT_EQ(word1->pigLatinify(),     "opal-way");
-    ASSERT_EQ(word2->pigLatinify(),    "richy-way");
-    ASSERT_EQ(word3->pigLatinify(),  "asshole-way");
-    ASSERT_EQ(word4->pigLatinify(),   "snakey-way");
+    ASSERT_EQ(word1->pigLatinify(), "opal-way");
+    ASSERT_EQ(word2->pigLatinify(), "ichy-way");
+    ASSERT_EQ(word3->pigLatinify(), "asshole-way");
+    ASSERT_EQ(word4->pigLatinify(), "achey-way");
 };

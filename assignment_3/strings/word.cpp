@@ -12,11 +12,11 @@ std::string Word::pigLatinify() {
     bool consonant = isConsonant();
     // 2. call the appropriate helper
     if(consonant) return pigLatinifyConsonant();
-    return pigLatinifyConsonant();
+    return pigLatinifyVowel();
 };
 
 std::string Word::pigLatinifyConsonant() {
-    std::string tmp = "";
+    std::string tmp;
 
     // 1. move init consonant to end of word (qu is 1 consonsnt)
     char c = this->word[0];
@@ -34,7 +34,7 @@ std::string Word::pigLatinifyConsonant() {
 
 std::string Word::pigLatinifyVowel() {
     // 1. add way to the end of the word
-    return NULL;
+    return word + '-' + "way";
 };
 
 bool Word::isConsonant() {
