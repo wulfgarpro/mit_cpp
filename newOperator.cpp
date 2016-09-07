@@ -12,7 +12,10 @@ using namespace std;
 
 int* heap() {
     int xx = 4;
+
     int *x = new int; // new allocates mem from heap
+    delete x;
+
     x = &xx;
     return x;
 }
@@ -27,9 +30,8 @@ int* stack() {
        int* y = &x;
        cout << &(*y) << endl;
     */
-    
     return &x;
-}
+} // cppcheck says: Address of an auto-variable returned.
 
 int main(void) {
     int* pI = stack(); // dangling pointer problem (warning)
