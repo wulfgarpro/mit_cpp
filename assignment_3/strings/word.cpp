@@ -1,7 +1,6 @@
 #include "word.h"
 #include <string>
 #include <algorithm>
-#include <iostream>
 
 Word::Word(const std::string word) {
     this->word = word;
