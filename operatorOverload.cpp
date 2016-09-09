@@ -30,8 +30,8 @@ class Custom {
 
         int getA() { return a; }
         int getB() { return b; }
-        int setB(int bb) { b = bb; }
-        int setA(int aa) { a = aa; }
+        void setB(int bb) { b = bb; }
+        void setA(int aa) { a = aa; }
     private:
         int a;
         int b;
