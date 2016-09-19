@@ -27,16 +27,16 @@ Custom& operator<(Custom& a, Custom& b) {
     return tmp;
 }
 
-template <typename T>
-T min(T a, T b) {
-    if (a < b) return a;
-    return b;
+template <class T>
+T& min(T& a, T& b) {
+    T& smallest = (a < b);
+    return smallest;
 }
 
 int main(void) {
     Custom a(3,1);
     Custom b(2,2);
-    Custom& c = (a < b);
+    Custom& c = min(a, b);
     std::cout << "Smallest comparable is: " << c.sum() << std::endl;
     return 0;
 }
