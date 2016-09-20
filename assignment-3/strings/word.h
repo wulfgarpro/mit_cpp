@@ -11,13 +11,13 @@ class Word {
     public:
         Word(std::string word);
         std::string pigLatinify(void);
-        std::string getWord() { return word; }
+        std::string getWord() { return word_; }
     protected:
     private:
-        std::string word;
-        std::string pigLatinifyConsonant();
-        std::string pigLatinifyVowel();
-        bool isConsonant();
+        std::string word_;
+        std::string pigLatinifyConsonant_();
+        std::string pigLatinifyVowel_();
+        bool isConsonant_();
 };
 
 #endif // WORD_H
