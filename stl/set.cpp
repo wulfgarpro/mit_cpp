@@ -10,5 +10,9 @@ int main(void) {
     for(auto it = s.begin(); it != s.end(); it++) {
         std::cout << *it << std::endl;
     }
+
+    auto f = s.find(1);
+    std::cout << *f << std::endl; // find using key for set which is the value (unlike map)
+
     return 0;
 }
