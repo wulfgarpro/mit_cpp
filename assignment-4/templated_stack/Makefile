@@ -5,10 +5,12 @@ TARGET = stack
 SRCS = templated_stack_4_1.cpp runner.cpp
 INCLUDES = templated_stack_4_1.h
 
-all: $(TARGET)
+default: $(TARGET)
+
+all: clean $(TARGET)
 
 $(TARGET): $(SRCS)
-	$(CXX) $(SRCS) -o $(TARGET) $(CXXFLAGS)
+	$(CXX) $(SRCS) -I. -o $(TARGET) $(CXXFLAGS)
 
 clean:
 	rm -rf $(TARGET)
