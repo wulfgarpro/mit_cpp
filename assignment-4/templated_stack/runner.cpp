@@ -9,16 +9,16 @@ int main(void) {
     Stack<int> myStack;
     std::cout << "Stack is empty: " << myStack.empty() << std::endl;
     // Add to stack
-    s.push(1);
-    std::cout << s.top() << std::endl;
-    s.push(2);
-    std::cout << s.top() << std::endl;
-    s.push(3);
-    std::cout << s.top() << std::endl;
-    s.push(4);
-    std::cout << s.top() << std::endl;
-    s.push(5);
-    std::cout << s.top() << std::endl;
+    myStack.push(1);
+    std::cout << myStack.top() << std::endl;
+    myStack.push(2);
+    std::cout << myStack.top() << std::endl;
+    myStack.push(3);
+    std::cout << myStack.top() << std::endl;
+    myStack.push(4);
+    std::cout << myStack.top() << std::endl;
+    myStack.push(5);
+    std::cout << myStack.top() << std::endl;
 
     // Pop from stack
     myStack.pop();
@@ -48,11 +48,11 @@ int main(void) {
     std::cout << "Stack is empty: " << myStack.empty() << std::endl;
 
     // Add to stack
-    s.push(1);
-    s.push(2);
-    s.push(3);
-    s.push(4);
-    s.push(5);
+    myStack.push(1);
+    myStack.push(2);
+    myStack.push(3);
+    myStack.push(4);
+    myStack.push(5);
 
     // Create a second stack for + overload
     Stack<int> myStackB;
@@ -64,5 +64,27 @@ int main(void) {
 
     // testing + operator overload
     Stack<int> super = myStack + myStackB;        
+    std::cout << super.top() << std::endl;
+
+    super.pop();
+    std::cout << super.top() << std::endl;
+    super.pop();
+    std::cout << super.top() << std::endl;
+    super.pop();
+    std::cout << super.top() << std::endl;
+    super.pop();
+    std::cout << super.top() << std::endl;
+    super.pop();
+    std::cout << super.top() << std::endl;
+    super.pop();
+    std::cout << super.top() << std::endl;
+    super.pop();
+    std::cout << super.top() << std::endl;
+    super.pop();
+    std::cout << super.top() << std::endl;
+    super.pop();
+    std::cout << super.top() << std::endl;
+    super.pop();
+
     return 0;
 }
