@@ -1,9 +1,13 @@
-#include <map>
+#include <vector>
+#include "graph.h"
 
-template <typename V>
-class Graph {
-    private:
-        std::map<int, V> graph;
-    protected:
-    public:
-};
+Graph::Graph(const std::vector<int> &starts, const std::vector<int> &ends) {
+}
+
+int Graph::numOutgoing(const int nodeID) const {
+    return -1;
+}
+
+const std::vector<int>& Graph::adjacent(const int nodeID) const {
+}
+
