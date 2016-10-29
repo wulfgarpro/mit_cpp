@@ -3,7 +3,7 @@
 
 class Graph {
     private:
-        std::map<int, std::vector<int>>* graph;
+        std::map<int, std::vector<int>>* graph = new std::map<int, std::vector<int>>();
     protected:
     public:
         Graph(const std::vector<int> &starts, const std::vector<int> &ends);
