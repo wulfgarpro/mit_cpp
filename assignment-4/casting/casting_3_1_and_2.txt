@@ -1,8 +1,0 @@
-3.1. 
-    Reinterpret cast is a follow on from C-style casting.  It will perform the rules of explict casting defined here: http://en.cppreference.com/w/cpp/language/explicit_cast.  The below will take the Rectangle* and tell the compiler to treat the memory of rect as Triangle*.  The main problems that might arise doing this is having no type safety, it simply follows it's basic set of rules and if they're met, assumes the programmer knows what they're doing.
-        Triangle* tri = reinterpret_cast<Triangle*>(rect);
-
-3.2.
-    Dynamic cast does provide run-time checking of types and is the best choice when casting between pointers/references of polymorphic types; here dynamic_cast will do a side-cast using the rules here: http://en.cppreference.com/w/cpp/language/dynamic_cast.
-        Triangle* tri = dynamic_cast<Triangle*>(rect);
-    
