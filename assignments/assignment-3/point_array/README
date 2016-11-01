@@ -1,1 +1,0 @@
-g++ -c point_array.cpp -I ../point ../point/point.cpp --std=c++11

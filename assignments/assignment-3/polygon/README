@@ -1,4 +1,0 @@
-g++ -c rectangle.cpp -I ./../point/ -I ./../point_array ./../point/point.cpp ./../point_array/point_array.cpp polygon.cpp -std=c++11
-g++ -c triangle.cpp -I ./../point/ -I ./../point_array ./../point/point.cpp ./../point_array/point_array.cpp polygon.cpp -std=c++11
-g++ polygon.cpp -I ./../point/ -I ./../point_array ./../point/point.cpp ./../point_array/point_array.cpp ./triangle.cpp ./rectangle.cpp -o polygon -std=c++11
-g++ polygon.cpp -I ./ -I ./../point/ -I ./../point_array ./../point/point.cpp ./../point_array/point_array.cpp ./rectangle.cpp ./triangle.cpp -o polygon -std=c++11
