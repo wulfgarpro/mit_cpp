@@ -1,0 +1,11 @@
+To compile with cmake with clang for build-check
+
+On Ubuntu:
+
+sudo apt-get install clang
+sudo update-alternatives c++
+    - select clang++
+
+cd build
+cmake ../
+build-check make

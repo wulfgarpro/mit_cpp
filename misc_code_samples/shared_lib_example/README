@@ -1,0 +1,5 @@
+g++ -c -fpic foo.cpp            # compile with Position Independent Code (foo.o)
+g++ -shared -o libfoo.so foo.o  # create shared lib (libfoo.so)
+g++ -L. main.cpp -o test -lfoo  # compile and link with shared lib from local dir (test)
+export LD_LIBRARY_PATH=./:      # export shared lib path
+./test                          # run
