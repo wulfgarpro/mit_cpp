@@ -3,7 +3,7 @@
 
 // demonstrates bitwise AND (&)
 int main(void) {
-    /* ere, item 3 is bit 3 in a byte, which is value 4 */
+    /* here, item 3 is bit 3 in a byte, which is value 4 */
 
     //char items = 4; // in binary, 00000100, item 3 is true 
 
