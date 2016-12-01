@@ -9,8 +9,8 @@ int main(void) {
     assert(!item_3);
     std::cout << static_cast<int>(item_3) << std::endl; // off
 
-    // with OR, 1 | 0 = 1, 1 | 1 = 1, 0 | 0 = 0
-    // our mask to turn item 3 on (it's off as per our variable above)
+    // with OR, 1 | 0 = 1, 1 | 1 = 1, 0 | 0 = 0, which means no matter item_3's state, it will be 1
+    // our mask to turn item 3 on (it's off as per our variable above), but if it was on it would remain on
     item_3 |= 1 << 2;
     assert(item_3);
 
