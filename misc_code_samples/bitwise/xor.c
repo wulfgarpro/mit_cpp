@@ -9,9 +9,9 @@ int main(void) {
     // e.g.
     //
 
-    char item_3 = 1 << 2;
+    char item_3 = 1 << 2; // 00000100
     assert(item_3 != 0);
     item_3 ^= item_3; // this flips item_3 only
-    assert(item_3 == 0);
+    assert(item_3 == 0); // 00000000
     return 0;
 }
