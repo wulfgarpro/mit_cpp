@@ -1,6 +1,6 @@
 CXX = g++
 
-default: or and xor not
+default: or and xor not xor_challenge
 
 or: or.c
 	$(CXX) or.c -o or
@@ -14,7 +14,10 @@ xor: xor.c
 not: not.c
 	$(CXX) not.c -o not 
 
-clean:
-	rm or and xor not
+xor_challenge: xor_challenge.c
+	$(CXX) xor_challenge.c -o xor_challenge 
 
-all: clean or and xor not
+clean:
+	rm or and xor not xor_challenge
+
+all: clean or and xor not xor_challenge
