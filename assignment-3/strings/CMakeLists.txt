@@ -12,10 +12,10 @@ if (test)
 
     # compile gtest for ABI
     add_subdirectory (gtest)
-    include_directories (${PROJECT_SOURCE_DIR}/gtest/include ${PROJECT_SOURCE_DIR}/gtest)
+    include_directories (${PROJECT_SOURCE_DIR}/gtest/googletest/include ${PROJECT_SOURCE_DIR}/gtest/google/test ${PROJECT_SOURCE_DIR}/gtest/googlemock/include ${PROJECT_SOURCE_DIR}/gtest/googlemock)
 
     add_executable (test_Strings ${PROJECT_SOURCE_DIR}/test/test_string.cpp ${PROJECT_SOURCE_DIR}/test/test_word.cpp ${PROJECT_SOURCE_DIR}/word.cpp)
-    target_link_libraries (test_Strings gtest gtest_main)
+    target_link_libraries (test_Strings gtest gtest_main gmock gmock_main)
 
     add_test(NAME my-test COMMAND test_Strings)
 endif()

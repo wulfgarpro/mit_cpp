@@ -1,4 +1,6 @@
 #include "gtest/gtest.h"
+#include "gmock/gmock.h"
+
 #include "word.h"
 
 class WordTest : public ::testing::Test {
