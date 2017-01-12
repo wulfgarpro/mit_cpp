@@ -10,7 +10,8 @@ static const std::vector<char> vowels (theVowels, theVowels + sizeof(theVowels) 
 class Word {
     public:
         Word(std::string word);
-        std::string pigLatinify(void);
+        virtual ~Word() {};
+        virtual std::string pigLatinify(void);
         std::string getWord() { return word_; }
     protected:
     private:
