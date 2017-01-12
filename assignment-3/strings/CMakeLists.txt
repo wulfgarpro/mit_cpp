@@ -1,9 +1,9 @@
 cmake_minimum_required (VERSION 2.6)
 
-project (Strings)
+project (strings)
 set (CMAKE_CXX_FLAGS "-g -Wall -std=c++11")
 
-add_executable (Strings ${PROJECT_SOURCE_DIR}/strings.cpp ${PROJECT_SOURCE_DIR}/word.cpp)
+add_executable (strings ${PROJECT_SOURCE_DIR}/app.cpp ${PROJECT_SOURCE_DIR}/word.cpp)
 include_directories ("${PROJECT_SOURCE_DIR}")
 
 option (test "Build all tests." ON)
@@ -14,8 +14,8 @@ if (test)
     add_subdirectory (gtest)
     include_directories (${PROJECT_SOURCE_DIR}/gtest/googletest/include ${PROJECT_SOURCE_DIR}/gtest/google/test ${PROJECT_SOURCE_DIR}/gtest/googlemock/include ${PROJECT_SOURCE_DIR}/gtest/googlemock)
 
-    add_executable (test_Strings ${PROJECT_SOURCE_DIR}/test/test_string.cpp ${PROJECT_SOURCE_DIR}/test/test_word.cpp ${PROJECT_SOURCE_DIR}/word.cpp)
-    target_link_libraries (test_Strings gtest gtest_main gmock gmock_main)
+    add_executable (strings_test ${PROJECT_SOURCE_DIR}/test/strings_test.cpp ${PROJECT_SOURCE_DIR}/test/word_test.cpp ${PROJECT_SOURCE_DIR}/word.cpp)
+    target_link_libraries (strings_test gtest gtest_main gmock gmock_main)
 
-    add_test(NAME my-test COMMAND test_Strings)
+    add_test(NAME my-test COMMAND strings_test)
 endif()
