@@ -4,21 +4,25 @@
 #include <vector>
 #include "word.h"
 #include <iostream>
+#include <string>
+#include <sstream>
 
 template <typename Word>
 class Strings {
     private:
-        std::vector<Word>* words = new std::vector<Word>();
+        std::vector<Word*>* words = new std::vector<Word*>();
     protected:
     public:
-        ~Strings() {};
-        void makeWord(const Word word) {
+        ~Strings() { delete words; };
+        void addWord(Word* word) {
             this->words->push_back(word); 
         };
-        void latinifyWords() const {
-            for(Word w : *words) {
-                std::cout << w.pigLatinify() << std::endl;
+        std::string latinifyString() const {
+            std::ostringstream oss;
+            for(Word* w : *words) {
+                oss << w->pigLatinify() << " ";
             }
+            return oss.str();
         };
 };
 

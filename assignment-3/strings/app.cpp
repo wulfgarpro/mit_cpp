@@ -1,5 +1,7 @@
 #include "word.h"
 #include "strings.h"
+#include <string>
+#include <iostream>
 
 int main(void) {
     Word w1("beast");
@@ -8,11 +10,12 @@ int main(void) {
     Word w4("question");
 
     Strings<Word>* strings = new Strings<Word>();
-    strings->makeWord(w1);
-    strings->makeWord(w2);
-    strings->makeWord(w3);
-    strings->makeWord(w4);
+    strings->addWord(&w1);
+    strings->addWord(&w2);
+    strings->addWord(&w3);
+    strings->addWord(&w4);
 
-    strings->latinifyWords();
+    std::string pigLatin = strings->latinifyString();
+    std::cout << pigLatin << std::endl;
     return 0;
 }
