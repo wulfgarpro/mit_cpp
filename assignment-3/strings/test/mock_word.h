@@ -4,7 +4,6 @@
 #include "gmock/gmock.h"
 #include "word.h"
 #include <string>
-#include <iostream>
 
 class MockWord : public Word {
     public:
