@@ -8,7 +8,7 @@
 #include <sstream>
 
 template <typename Word>
-class Strings {
+class Strings final {
     private:
         std::vector<Word*>* words = new std::vector<Word*>();
     protected:
