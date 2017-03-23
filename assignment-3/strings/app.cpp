@@ -10,7 +10,7 @@ int main(void) {
     Word w4("question");
 
     Strings<Word>* strings = new Strings<Word>();
-    strings->addWord(&w1);
+     strings->addWord(&w1);
     strings->addWord(&w2);
     strings->addWord(&w3);
     strings->addWord(&w4);
